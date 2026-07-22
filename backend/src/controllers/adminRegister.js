@@ -13,7 +13,7 @@ const controller = {
             const exists = await model.findOne({ email });
             if (exists) {
                 return res.status(400).json({
-                    message: 'admin already exists'
+                    message: 'customer already exists'
                 });
             }
             const hash = await bcryptjs.hash(password, 10);
@@ -37,7 +37,7 @@ const controller = {
                 from: config.email.email,
                 to: email,
                 subject: 'Verificación de correo',
-                text: `Para verificar nada más tranqui. Use este código: ${random}. Expira en 15 minutos. Patitas.`
+                text: `Para verificar use este código: ${random}. Expira en 15 minutos.`
             }, (error, info) => {
                 if (error) return res.status(500).json({
                     message: 'error sending the email'
