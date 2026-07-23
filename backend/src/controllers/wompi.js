@@ -18,7 +18,7 @@ wompiController.generarToken = async (req, res) => {
       }),
     });
 
-    if (!response.ok) {
+    if (!response) {
       const error = await response.text();
       return res.status(500).json({ error });
     }
@@ -46,7 +46,7 @@ wompiController.paymentTest = async (req, res) => {
       },
     );
 
-    if (!response.ok) {
+    if (!response) {
       const error = await response.text();
       return res.status(500).json({ error });
     }
@@ -70,7 +70,7 @@ wompiController.payment3DS = async (req, res) => {
       body: JSON.stringify(formData),
     });
 
-    if (!response.ok) {
+    if (!response) {
       const error = await response.text();
       return res.status(500).json({ error });
     }
