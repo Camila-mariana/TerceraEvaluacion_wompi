@@ -1,33 +1,23 @@
 import mongoose, { Schema, model } from "mongoose";
-const Schema = new Schema(
+const schema = new Schema(
   {
     customerId: {
       type: mongoose.Types.ObjectId,
-      ref:"customer "
+      ref: "customer",
     },
-  },
-  {
-    quantify: {
+    quantity: {
       type: Number,
     },
-  },
-  {
     purchaseDate: {
       type: Date,
     },
-  },
-  {
     total: {
       type: Number,
     },
-  },
-  {
     paymentStatus: {
       type: String,
     },
-  },
-  {
-    trasactionId: {
+    transactionId: {
       type: String,
     },
   },
@@ -37,4 +27,4 @@ const Schema = new Schema(
   },
 );
 
-export default model("ticketPurchase", Schema);
+export default model("ticketPurchase", schema);

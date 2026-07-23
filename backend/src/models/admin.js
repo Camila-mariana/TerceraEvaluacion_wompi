@@ -1,31 +1,21 @@
 import { Schema, model } from "mongoose";
-const Schema = new Schema(
+const schema = new Schema(
   {
     name: {
-      type: Sting,
+      type: String,
     },
-  },
-  {
     email: {
-      type: Sting,
+      type: String,
     },
-  },
-  {
     password: {
-      type: Sting,
+      type: String,
     },
-  },
-  {
     isVerified: {
       type: Boolean,
     },
-  },
-  {
     LoginAttempts: {
       type: Number,
     },
-  },
-  {
     timeOut: {
       type: Date,
     },
@@ -36,4 +26,4 @@ const Schema = new Schema(
   },
 );
 
-export default model("admin", Schema);
+export default model("admin", schema);
